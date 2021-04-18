@@ -43,20 +43,27 @@ console.log(anagram('aab', 'abb'));
 
 // 3. Написать функцию, которая принимает массив с числами и возвращает новый массив, который содержит отрицательные числа из первого массива.
 
-let myArray = [4, -5, 0, 2, -67, 8, 10, -34];
+let myArray = [4, -1, 0, 2, -67, 8, 10, -344];
 
 function getNegativeNumbers(array) {
-  return array.filter(function(value) {
-    return value < 0;
-  });
+  return array.filter(value => value < 0);
 }
 console.log(getNegativeNumbers(myArray));
 
 // 4.Написать функцию, которая принимает массив и возвращает новый массив, состоящий только из уникальных значений первого массива (значения не должны повторяться).
 
 
-let myArray1 = ['a',1,'a',2,'1',1,'a',2,4,'a',5,4,'b',6,3,4,'b',5,2,23,'b',1,4,4,4];
-let unique = [...new Set(myArray)]; 
+let strings = ['a',1,'a',2,'1',1,'a',2,4,'a',5,4,'b',6,3,4,'b',5,2,23,'b',1,4,4,4];
+function unique(arr) {
+  let result = [];
 
-console.log(myArray1);
-console.log(unique);
+  for (let value of arr) {
+    if (!result.includes(value)) {
+      result.push(value);
+    }
+  }
+
+  return result;
+}
+
+console.log(unique(strings));
